@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Classification Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+        .result-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Classification Result</h1>
+        <div class="row result-container">
+            <div class="col-md-6 offset-md-3">
+                <img src="{{ image_url }}" alt="Input Image" class="img-fluid mb-4">
+                <h2>Predicted Concepts:</h2>
+                <ul class="list-group">
+                    {% for concept in concepts %}
+                        <li class="list-group-item">{{ concept[0] }}: {{ concept[1] }}</li>
+                    {% endfor %}
+                </ul>
+                <a href="/" class="btn btn-primary mt-4 py-4">Classify Another Image</a>
+                <a href="/gallery" class="btn btn-primary mt-4 py-4">View Gallery</a>
+                <a href="/images" class="btn btn-primary mt-4 py-4">Filter Gallery</a>
+
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

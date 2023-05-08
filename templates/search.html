@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Search</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .image-card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .image-card img {
+            max-width: 100%;
+            height: auto;
+            max-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Image Search</h1>
+        <div class="image-gallery">
+            {% for image in images %}
+                <div class="image-card">
+                    <img src="{{ image }}" alt="Image">
+                </div>
+            {% endfor %}
+        </div>
+        <div class="text-center">
+               <a href="/" class="btn btn-primary mt-4 py-4">Classify Another Image</a>
+                <a href="/gallery" class="btn btn-primary mt-4 py-4">View Gallery</a>
+                <a href="/images" class="btn btn-primary mt-4 py-4">Filter Gallery</a>
+        </div>
+    </div>
+</body>
+</html>
